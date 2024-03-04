@@ -3,11 +3,12 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class FlightDataHandler {
     public static void main(String[] args) throws Exception {
         int scannerIndex = 0;
-        Map flightList = new HashMap<String, String>();
+        HashMap flightList = new HashMap<String, String>();
 
         // Passenger Data temp variables
         String flightCode = "";
@@ -23,8 +24,13 @@ public class FlightDataHandler {
         {
             switch (scannerIndex) {
                 case 0:
-                    flightCode = sc.next();
-                    scannerIndex++;
+                   String current = sc.next();
+                    if (Pattern.matches("[A-Z]{2}\\d{2}", current)) {
+                        flightCode = current;
+                        scannerIndex++;
+                    } else {
+                        throw new IllegalArgumentException("Wrong flight code format");
+                    }
                     break;
                 case 1:
                     destination = sc.next();
@@ -46,6 +52,7 @@ public class FlightDataHandler {
                     maxBagVolume = Double.parseDouble(sc.next());
                     // PLACEHOLDER: The Value of passengerList will need to be an instance of
                     // Passenger class.
+                    Flight newFlight = new Flight(destination, company, maxPassengers, maxBagWeight, maxBagVolume);
                     flightList.put(flightCode, destination);
                     scannerIndex = 0;
                     break;

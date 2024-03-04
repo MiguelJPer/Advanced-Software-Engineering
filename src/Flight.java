@@ -1,3 +1,6 @@
+package src;
+
+
 public class Flight {
     private String destinationAirport;
     private String carrier;
