@@ -64,8 +64,7 @@ import java.util.Scanner;
 
 public class FlightDataHandler {
     public static void main(String[] args) throws Exception {
-        List<Flight> flightList = new ArrayList<>();
-        flightList = flightListGetter();
+        List<Flight> flightList = flightListGetter();
 
         // Displaying the flightList with newline after each object
         for (Flight flight : flightList) {
@@ -79,25 +78,22 @@ public class FlightDataHandler {
 
         // Parsing the CSV file
         Scanner sc = new Scanner(new File("Datasets\\flightList.csv"));
-        sc.useDelimiter(",|\r?\n"); // Setting the delimiter pattern to comma or newline, handling optional carriage return
-        while (sc.hasNext()) {
-            String[] data = new String[6]; // Array to store flight data
+        sc.nextLine(); // Skip header line
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            String[] data = line.split(",");
 
-            // Reading each line of flight data
-            for (int i = 0; i < 6; i++) {
-                if (sc.hasNext()) {
-                    data[i] = sc.next();
-                }
-            }
+            // Extracting flight data
+            String flightCode = data[0];
+            String airport = data[1];
+            String airline = data[2];
+            double excessFeePerUnitWeight = Double.parseDouble(data[3]);
+            int maxCapacity = Integer.parseInt(data[4]);
+            double maxLuggageWeight = Double.parseDouble(data[5]);
+            double maxLuggageVolume = Double.parseDouble(data[6]);
 
             // Creating a Flight object and adding it to the flightList list
-            String flightCode = data[0];
-            String destination = data[1];
-            String company = data[2];
-            int maxPassengers = Integer.parseInt(data[3]);
-            double maxBagWeight = Double.parseDouble(data[4]);
-            double maxBagVolume = Double.parseDouble(data[5]);
-            Flight newFlight = new Flight(flightCode, destination, company, maxPassengers, maxBagWeight, maxBagVolume);
+            Flight newFlight = new Flight(flightCode, airport, airline, excessFeePerUnitWeight, maxCapacity, maxLuggageWeight, maxLuggageVolume);
             flightList.add(newFlight);
         }
         sc.close(); // Closing the scanner
@@ -105,4 +101,5 @@ public class FlightDataHandler {
         return flightList;
     }
 }
+
 

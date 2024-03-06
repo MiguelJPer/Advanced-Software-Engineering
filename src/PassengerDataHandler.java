@@ -22,20 +22,40 @@ public class PassengerDataHandler {
 
         // Parsing the CSV file
         Scanner sc = new Scanner(new File("Datasets\\bookingList.csv"));
-        sc.useDelimiter(","); // Setting the delimiter pattern to comma or newline, handling optional carriage return
-        while (sc.hasNext()) {
-            String bookingNumber = sc.next();
-            String name = sc.next();
-            String flightCode = sc.next();
-            boolean isChecked = Boolean.parseBoolean(sc.next());
 
-            Passenger newPassenger = new Passenger(bookingNumber, name, flightCode, isChecked);
-            passengerList.add(newPassenger);
+        // Assuming the format is Booking Number, Name, Flight Code, Checked In
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            String[] parts = line.split(",");
+
+            if (parts.length == 4) {
+                String bookingNumber = parts[0];
+                String name = parts[1];
+                String flightCode = parts[2];
+                boolean isChecked = Boolean.parseBoolean(parts[3]);
+
+                // Ensure Flight Code has the correct format
+                if (isValidFlightCode(flightCode)) {
+                    Passenger newPassenger = new Passenger(bookingNumber, name, flightCode, isChecked);
+                    passengerList.add(newPassenger);
+                } else {
+                    System.err.println("Invalid Flight Code format: " + flightCode);
+                }
+            } else {
+                System.err.println("Invalid data format: " + line);
+            }
         }
+
         sc.close(); // Closing the scanner
         return passengerList;
     }
+
+    // Validate Flight Code format (two uppercase letters followed by two digits)
+    private static boolean isValidFlightCode(String flightCode) {
+        return flightCode.matches("[A-Z]{2}\\d{2}");
+    }
 }
+
 
 //import java.io.*;
 //import java.util.HashMap;
@@ -99,6 +119,3 @@ public class PassengerDataHandler {
 //        System.out.println(passengerList);
 //    }
 //}
-
-
-
