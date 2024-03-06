@@ -1,7 +1,6 @@
 package src;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.scene.Scene;
@@ -10,6 +9,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import src.DataStructure.Flight;
+import src.DataStructure.Passenger;
 
 import java.io.BufferedWriter;
 import java.io.File;

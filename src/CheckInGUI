@@ -1,0 +1,76 @@
+package src ;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class CheckInGUI extends JFrame {
+    private JTextField lastNameField;
+    private JTextField bookingReferenceField;
+    private JTextField baggageWeightField;
+    private JTextField baggageVolumeField;
+    private JButton checkInButton;
+
+    public CheckInGUI() {
+        setTitle("Airport Check-in System");
+        setSize(400, 200); // Adjust window size
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(5, 2, 5, 5)); // Add spacing
+
+        // Add components
+        addLabelAndField("Last Name:");
+        addLabelAndField("Booking Reference:");
+        addLabelAndField("Baggage Weight:");
+        addLabelAndField("Baggage Volume:");
+
+        // Add Check-in button
+        checkInButton = new JButton("Check-in");
+        checkInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Placeholder action for check-in button
+                String lastName = lastNameField.getText();
+                String bookingReference = bookingReferenceField.getText();
+                double baggageWeight = Double.parseDouble(baggageWeightField.getText());
+                double baggageVolume = Double.parseDouble(baggageVolumeField.getText());
+                
+                // Perform check-in operation using the provided information
+                // This is where you would call your actual check-in method
+                System.out.println("Checking in: Last Name: " + lastName + ", Booking Reference: " + bookingReference +
+                        ", Baggage Weight: " + baggageWeight + ", Baggage Volume: " + baggageVolume);
+            }
+        });
+        add(checkInButton);
+
+        setVisible(true);
+    }
+
+    // Helper method to add label and text field
+    private void addLabelAndField(String labelText) {
+        JLabel label = new JLabel(labelText);
+        add(label);
+
+        JTextField textField = new JTextField();
+        add(textField);
+
+        // Store text field references to corresponding member variables
+        if (labelText.equals("Last Name:")) {
+            lastNameField = textField;
+        } else if (labelText.equals("Booking Reference:")) {
+            bookingReferenceField = textField;
+        } else if (labelText.equals("Baggage Weight:")) {
+            baggageWeightField = textField;
+        } else if (labelText.equals("Baggage Volume:")) {
+            baggageVolumeField = textField;
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new CheckInGUI();
+            }
+        });
+    }
+}

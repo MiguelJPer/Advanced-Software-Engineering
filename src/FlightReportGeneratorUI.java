@@ -1,19 +1,15 @@
 package src;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import src.DataStructure.Passenger;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class FlightReportGeneratorUI extends Application {
 
@@ -105,4 +101,5 @@ public class FlightReportGeneratorUI extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

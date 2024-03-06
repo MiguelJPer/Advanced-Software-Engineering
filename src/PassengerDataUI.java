@@ -8,6 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import src.DataStructure.Passenger;
 
 import java.io.FileNotFoundException;
 import java.util.List;

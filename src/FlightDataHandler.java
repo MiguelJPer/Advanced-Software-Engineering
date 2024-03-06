@@ -56,6 +56,8 @@ package src;
 //    }
 //}
 
+import src.DataStructure.Flight;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

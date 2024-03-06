@@ -47,6 +47,7 @@
     "Application.PassengerDataHandler.executor": "Run",
     "Application.PassengerDataUI.executor": "Run",
     "Application.PassengerQueryUI.executor": "Run",
+    "Application.src.PassengerDataHandler.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
@@ -78,7 +79,7 @@
       <option name="VM_PARAMETERS" value="--module-path D:\Install\JAVA\sdk\javafx-sdk-21.0.2\lib --add-modules javafx.controls,javafx.fxml " />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.*" />
+          <option name="PATTERN" value="src.DataStructure.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +100,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PassengerDataHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.PassengerDataHandler" />
+    <configuration name="PassengerQueryUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.PassengerQueryUI" />
       <module name="Advanced-Software-Engineering-main" />
+      <option name="VM_PARAMETERS" value="--module-path D:\Install\JAVA\sdk\javafx-sdk-21.0.2\lib --add-modules javafx.controls,javafx.fxml " />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.AO.*" />
+          <option name="PATTERN" value="src.DataStructure.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,10 +114,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PassengerQueryUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.PassengerQueryUI" />
+    <configuration name="src.PassengerDataHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.PassengerDataHandler" />
       <module name="Advanced-Software-Engineering-main" />
-      <option name="VM_PARAMETERS" value="--module-path D:\Install\JAVA\sdk\javafx-sdk-21.0.2\lib --add-modules javafx.controls,javafx.fxml " />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="src.*" />
@@ -127,19 +128,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.src.PassengerDataHandler" />
       <item itemvalue="Application.FlightDataGenerator" />
       <item itemvalue="Application.FlightReportGeneratorUI" />
       <item itemvalue="Application.PassengerDataGenerator" />
-      <item itemvalue="Application.PassengerDataHandler" />
       <item itemvalue="Application.PassengerQueryUI" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.PassengerQueryUI" />
+        <item itemvalue="Application.src.PassengerDataHandler" />
         <item itemvalue="Application.FlightReportGeneratorUI" />
         <item itemvalue="Application.FlightDataGenerator" />
         <item itemvalue="Application.PassengerDataGenerator" />
-        <item itemvalue="Application.PassengerDataHandler" />
       </list>
     </recent_temporary>
   </component>

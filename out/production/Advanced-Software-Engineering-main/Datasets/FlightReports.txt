@@ -19,6 +19,13 @@ Total Luggage Volume: 42.0
 Total Excess Fee: 1254.96
 Exceeded Capacity: No
 
+Flight Code: WH64
+Passenger Count: 1
+Total Luggage Weight: 4.0
+Total Luggage Volume: 6.0
+Total Excess Fee: 256.54
+Exceeded Capacity: No
+
 Flight Code: GW50
 Passenger Count: 6
 Total Luggage Weight: 24.0
