@@ -18,45 +18,57 @@ public class PassengerDataHandler {
         // parsing a CSV file into Scanner class constructor
         Scanner sc = new Scanner(new File("Datasets\\bookingList.csv"));
         sc.useDelimiter(","); // sets the delimiter pattern
-        while (sc.hasNext()) // returns a boolean value
-        {
-            switch (scannerIndex) {
-                case 0:
-                    String current = sc.next();
-                    if (Pattern.matches("\\d{5}", current)) {
-                        bookingNumber = Integer.parseInt(current);
-                        scannerIndex++;
-                    } else {
-                        throw new IllegalArgumentException("Wrong booking number format");
-                    }
-                    break;
-                case 1:
-                    current = sc.next();
-                    if (Pattern.matches("[A-Za-z]+\\s[A-Za-z]+", current)) {
-                        name = current;
-                        scannerIndex++;
-                    } else {
-                        throw new IllegalArgumentException("Wrong name format");
-                    }
-                    break;
-                case 2:
-                    current = sc.next();
-                    if (Pattern.matches("[A-Z]{2}\\d{2}", current)) {
-                        flightCode = current;
-                        scannerIndex++;
-                    } else {
-                        throw new IllegalArgumentException("Wrong flight code format");
-                    }
-                    break;
-                case 3:
-                    isChecked = Boolean.valueOf(sc.next());
-                    // PLACEHOLDER: The Value of passengerList will need to be an instance of
-                    // Passenger class.
-                    Passenger newPassenger = new Passenger(flightCode, name, flightCode, isChecked);
-                    passengerList.put(bookingNumber, newPassenger);
-                    scannerIndex = 0;
-                    break;
-            }
+        /*
+         * while (sc.hasNext()) // returns a boolean value
+         * {
+         * switch (scannerIndex) {
+         * case 0:
+         * String current = sc.next();
+         * if (Pattern.matches("\\d{5}", current)) {
+         * bookingNumber = Integer.parseInt(current);
+         * scannerIndex++;
+         * } else {
+         * throw new IllegalArgumentException("Wrong booking number format");
+         * }
+         * break;
+         * case 1:
+         * current = sc.next();
+         * if (Pattern.matches("[A-Za-z]+\\s[A-Za-z]+", current)) {
+         * name = current;
+         * scannerIndex++;
+         * } else {
+         * throw new IllegalArgumentException("Wrong name format");
+         * }
+         * break;
+         * case 2:
+         * current = sc.next();
+         * if (Pattern.matches("[A-Z]{2}\\d{2}", current)) {
+         * flightCode = current;
+         * scannerIndex++;
+         * } else {
+         * throw new IllegalArgumentException("Wrong flight code format");
+         * }
+         * break;
+         * case 3:
+         * isChecked = Boolean.valueOf(sc.next());
+         * // PLACEHOLDER: The Value of passengerList will need to be an instance of
+         * // Passenger class.
+         * Passenger newPassenger = new Passenger(flightCode, name, flightCode,
+         * isChecked);
+         * passengerList.put(bookingNumber, newPassenger);
+         * scannerIndex = 0;
+         * break;
+         * }
+         * }
+         */
+        while (sc.hasNext()) {
+            bookingNumber = Integer.parseInt(sc.next());
+            name = sc.next();
+            flightCode = sc.next();
+            isChecked = Boolean.parseBoolean(sc.next());
+
+            Passenger newPassenger = new Passenger(flightCode, name, flightCode, isChecked);
+            passengerList.put(bookingNumber, newPassenger);
         }
         sc.close();// closes the scanner
         System.out.println(passengerList);
