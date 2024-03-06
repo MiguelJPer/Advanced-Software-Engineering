@@ -1,19 +1,22 @@
 package src;
+
 public class Flight {
     private String flightCode;
-    private String destination;
-    private String company;
-    private int maxPassengers;
-    private double maxBagWeight;
-    private double maxBagVolume;
+    private String airport;
+    private String airline;
+    private double excessFeePerUnitWeight;
+    private int maxCapacity;
+    private double maxLuggageWeight;
+    private double maxLuggageVolume;
 
-    public Flight(String flightCode, String destination, String company, int maxPassengers, double maxBagWeight, double maxBagVolume) {
+    public Flight(String flightCode, String airport, String airline, double excessFeePerUnitWeight, int maxCapacity, double maxLuggageWeight, double maxLuggageVolume) {
         this.flightCode = flightCode;
-        this.destination = destination;
-        this.company = company;
-        this.maxPassengers = maxPassengers;
-        this.maxBagWeight = maxBagWeight;
-        this.maxBagVolume = maxBagVolume;
+        this.airport = airport;
+        this.airline = airline;
+        this.excessFeePerUnitWeight = excessFeePerUnitWeight;
+        this.maxCapacity = maxCapacity;
+        this.maxLuggageWeight = maxLuggageWeight;
+        this.maxLuggageVolume = maxLuggageVolume;
     }
 
     // Getters and setters
@@ -26,56 +29,64 @@ public class Flight {
         this.flightCode = flightCode;
     }
 
-    public String getDestination() {
-        return destination;
+    public String getAirport() {
+        return airport;
     }
 
-    public void setDestination(String destination) {
-        this.destination = destination;
+    public void setAirport(String airport) {
+        this.airport = airport;
     }
 
-    public String getCompany() {
-        return company;
+    public String getAirline() {
+        return airline;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setAirline(String airline) {
+        this.airline = airline;
     }
 
-    public int getMaxPassengers() {
-        return maxPassengers;
+    public double getExcessFeePerUnitWeight() {
+        return excessFeePerUnitWeight;
     }
 
-    public void setMaxPassengers(int maxPassengers) {
-        this.maxPassengers = maxPassengers;
+    public void setExcessFeePerUnitWeight(double excessFeePerUnitWeight) {
+        this.excessFeePerUnitWeight = excessFeePerUnitWeight;
     }
 
-    public double getMaxBagWeight() {
-        return maxBagWeight;
+    public int getMaxCapacity() {
+        return maxCapacity;
     }
 
-    public void setMaxBagWeight(double maxBagWeight) {
-        this.maxBagWeight = maxBagWeight;
+    public void setMaxCapacity(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
     }
 
-    public double getMaxBagVolume() {
-        return maxBagVolume;
+    public double getMaxLuggageWeight() {
+        return maxLuggageWeight;
     }
 
-    public void setMaxBagVolume(double maxBagVolume) {
-        this.maxBagVolume = maxBagVolume;
+    public void setMaxLuggageWeight(double maxLuggageWeight) {
+        this.maxLuggageWeight = maxLuggageWeight;
+    }
+
+    public double getMaxLuggageVolume() {
+        return maxLuggageVolume;
+    }
+
+    public void setMaxLuggageVolume(double maxLuggageVolume) {
+        this.maxLuggageVolume = maxLuggageVolume;
     }
 
     @Override
     public String toString() {
         return "Flight{" +
                 "flightCode='" + flightCode + '\'' +
-                ", destination='" + destination + '\'' +
-                ", company='" + company + '\'' +
-                ", maxPassengers=" + maxPassengers +
-                ", maxBagWeight=" + maxBagWeight +
-                ", maxBagVolume=" + maxBagVolume +
+                ", airport='" + airport + '\'' +
+                ", airline='" + airline + '\'' +
+                ", excessFeePerUnitWeight=" + excessFeePerUnitWeight +
+                ", maxCapacity=" + maxCapacity +
+                ", maxLuggageWeight=" + maxLuggageWeight +
+                ", maxLuggageVolume=" + maxLuggageVolume +
                 '}';
     }
 }
-
