@@ -1,8 +1,8 @@
 Flight Code: HE17
-Passenger Count: 2
-Total Luggage Weight: 8.0
-Total Luggage Volume: 12.0
-Total Excess Fee: 382.74
+Passenger Count: 4
+Total Luggage Weight: 16.0
+Total Luggage Volume: 24.0
+Total Excess Fee: 765.48
 Exceeded Capacity: No
 
 Flight Code: VS01
