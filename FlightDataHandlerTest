@@ -1,0 +1,28 @@
+
+package src;
+import org.junit.Test;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class FlightDataHandlerTest {
+	 public Map<String, String> parseFlightData(File file) {
+	        // TODO: Implement the method to parse flight data from the file
+	        // For now, returning an empty map
+	        return new HashMap<>();
+	    }
+	@Test
+    public void testFlightDataHandler() throws Exception {
+        FlightDataHandler dataHandler = new FlightDataHandler();
+        File file = new File("Datasets\\flightList.csv");
+        Map<String, String> flightList = dataHandler.parseFlightData(file);
+        assertNotNull(flightList);
+        assertFalse(flightList.isEmpty());
+        
+    }
+
+}
